@@ -1,0 +1,15 @@
+{
+  "name": "function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "zip": "zip function.zip package.json *.js node_modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.12.0",
+    "mysql": "^2.13.0"
+  }
+}
