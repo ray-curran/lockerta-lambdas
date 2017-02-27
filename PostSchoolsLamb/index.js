@@ -25,7 +25,7 @@ exports.handler = (event, context, callback) => {
        "', nickname ='" + event.body.nickname + "', logo='" + event.body.logo + 
        "', website='" + event.body.website + "', state='" + event.body.state +
        "', city='" + event.body.city + "', population=" + event.body.population +
-       ", male_population=" + event.body.male_population + ", female_population=" + event.body.female_population + ", is_hidden=" + event.body.is_hidden +
+       ", male_population=" + event.body.male_population + ", female_population=" + event.body.female_population + ", is_hidden=" + event.body.is_hidden + ", is_deleted=" + event.body.is_deleted +
        " where id = " + event.id + ";";
      } else {
       query = "insert into schools (name, nickname, logo, website, state, city, population, male_population, female_population, is_hidden) " +

@@ -33,7 +33,7 @@ exports.handler = (event, context, callback) => {
        ', facilities_arena_name="' + event.body.facilities_arena_name + '", facilities_arena_built=' + event.body.facilities_arena_built +
        ", facilities_capacity=" + event.body.facilities_capacity + ", facilities_home_attendance=" + event.body.facilities_home_attendance +
        ", education_cost=" + event.body.education_cost + ", education_enrollment=" + event.body.education_enrollment +
-       ", education_graduation_rate=" + event.body.education_graduation_rate + ", is_hidden=" + event.body.is_hidden +
+       ", education_graduation_rate=" + event.body.education_graduation_rate + ", is_hidden=" + event.body.is_hidden + ", is_deleted=" + event.body.is_deleted +
        " where id = " + event.id + ";";
      } else {
       query = "insert into teams (sport, division, conference, gear, last_season_record, coach_fname, coach_lname, coach_last_record, coach_school_record, coach_alma_mater, national_titles, conference_titles, projected_openings, coach_year_started, coach_win_percent, coach_seasons_w_team, coach_ncaa_appearances, coach_conf_championships, facilities_arena_name, facilities_arena_built, facilities_capacity, facilities_home_attendance, education_cost, education_enrollment, education_graduation_rate, school_id, is_hidden) " +

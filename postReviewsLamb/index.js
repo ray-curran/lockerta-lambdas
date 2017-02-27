@@ -33,7 +33,7 @@ exports.handler = (event, context, callback) => {
        ", training_room_rating=" + event.body.training_room_rating + ", class_difficulty_rating=" + event.body.class_difficulty_rating +
        ", academic_rep_rating=" + event.body.academic_rep_rating + ", tutors_rating=" + event.body.tutors_rating +
        ", weather_rating=" + event.body.weather_rating + ", nightlife_rating=" + event.body.nightlife_rating +
-       ", fan_rating=" + event.body.fan_rating + ", is_hidden=" + event.body.is_hidden +
+       ", fan_rating=" + event.body.fan_rating + ", is_hidden=" + event.body.is_hidden + ", is_deleted=" + event.body.is_deleted +
        " where id = " + event.id + ";";
      } else {
       query = "insert into reviews (athlete_fname, athlete_lname, athlete_email, best_teammate, best_conf_player, team_rival, toughest_arena, head_coach_name, play_for_coach_again, graduate, comments, school_id, team_id, athlete_jersey_no, recruiting_rating, relationships_rating, development_rating, knowledge_sport_rating, program_tradition_rating, arena_rating, home_crowds_rating, weight_room_rating, locker_room_rating, training_room_rating, class_difficulty_rating, academic_rep_rating, tutors_rating, weather_rating, nightlife_rating, fan_rating, is_hidden) " +
