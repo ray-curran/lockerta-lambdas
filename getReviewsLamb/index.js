@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
         }
        });
        if (event.id) {
-        query = "select * from reviews where id = " + event.id + ";";
+        query = "select reviews.*, schools.name, teams.sport from reviews join schools on reviews.school_id = schools.id join teams on reviews.team_id = teams.id where reviews.id = " + event.id + ";"
        } else {
         query = "select reviews.*, schools.name, teams.sport from reviews join schools on reviews.school_id = schools.id join teams on reviews.team_id = teams.id;";
        }
