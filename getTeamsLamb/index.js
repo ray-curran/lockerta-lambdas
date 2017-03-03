@@ -21,9 +21,9 @@ exports.handler = (event, context, callback) => {
         }
        });
        if (event.id) {
-        query = "select * from teams where id = " + event.id + ";";
+        query = "select teams.*, schools.name from teams join schools on teams.school_id = schools.id where teams.id = " + event.id + ";";
        } else {
-        query = "select * from teams;";
+        query = "select teams.*, schools.name from teams join schools on teams.school_id = schools.id;";
        }
        connection.query(query, function(error, results, fields) {
         if (!error) {
