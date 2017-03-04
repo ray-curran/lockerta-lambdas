@@ -20,7 +20,7 @@ exports.handler = (event, context, callback) => {
             console.log('error connecting to database', error.stack)
         }
        });
-       query = "select * from teams where school_id = " + event.id + ";";
+       query = "select teams.*, schools.name from teams join schools on teams.school_id = schools.id where school_id = " + event.id + ";";
        connection.query(query, function(error, results, fields) {
         if (!error) {
             console.log('RESULTS')

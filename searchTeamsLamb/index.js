@@ -20,7 +20,12 @@ exports.handler = (event, context, callback) => {
             console.log('error connecting to database', error.stack)
         }
        });
-       query = 'select teams.*, schools.name from teams join schools on teams.school_id = schools.id where upper(sport) like upper("%' + event.query + '%") or upper(division) like upper("%' + event.query + '%") or upper(conference) like upper("%' + event.query + '%") or upper(coach_fname) like upper("%' + event.query + '%") or upper(coach_lname) like upper("%' + event.query + '%")';
+       if(event.id) {
+           query = 'select teams.*, schools.name from teams join schools on teams.school_id = schools.id where (upper(sport) like upper("%' + event.query + '%") or upper(division) like upper("%' + event.query + '%") or upper(conference) like upper("%' + event.query + '%") or upper(coach_fname) like upper("%' + event.query + '%") or upper(coach_lname) like upper("%' + event.query + '%")) and schools.id=' + event.id + ';';
+
+       } else {
+           query = 'select teams.*, schools.name from teams join schools on teams.school_id = schools.id where upper(sport) like upper("%' + event.query + '%") or upper(division) like upper("%' + event.query + '%") or upper(conference) like upper("%' + event.query + '%") or upper(coach_fname) like upper("%' + event.query + '%") or upper(coach_lname) like upper("%' + event.query + '%");';
+       }
        connection.query(query, function(error, results, fields) {
         if (!error) {
             console.log('RESULTS')
