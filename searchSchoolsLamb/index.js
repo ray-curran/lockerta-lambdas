@@ -6,6 +6,7 @@ exports.handler = (event, context, callback) => {
     var schools;
     var query;
 
+    event.query = event.query.replace(/%20/g, ' ')
     
     var getDBConnection = function () {
        connection = mysql.createConnection({
